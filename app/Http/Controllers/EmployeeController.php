@@ -50,4 +50,9 @@ class EmployeeController extends Controller
             
         }
     }
+
+    public function edit(Employee $employee) {
+        //$employee = Employee::findOrFail($id);       
+        return view('employee.edit',['employee' => $employee]);
+    }
 }

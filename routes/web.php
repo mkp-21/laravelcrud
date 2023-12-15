@@ -20,3 +20,4 @@ Route::get('/', function () {
 route::get('/employee' ,[EmployeeController::class,'index'])->name('employee.index');
 route::get('/employee/create' ,[EmployeeController::class,'create'])->name('employee.create');
 route::post('/employee' ,[EmployeeController::class,'store'])->name('employee.store');
+Route::get('/employee/{employee}/edit',[EmployeeController::class,'edit'])->name('employee.edit');
