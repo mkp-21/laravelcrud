@@ -46,7 +46,13 @@
 <td>{{ $employee->email }}</td>
 <td>{{ $employee->address }}</td>
 <td><a href="{{ route('employee.edit',$employee->id) }}" class="btn btn-primary btn-sm">edit</a>
-<a href="#" class="btn btn-danger btn-sm">delete</a></td>
+<a href="#" onclick="deleteEmployee({{ $employee->id }})" class="btn btn-danger btn-sm">Delete</a>
+
+                            <form id="employee-edit-action-{{ $employee->id }}" action="{{ route('employee.destroy',$employee->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                            </form>
+
 
 
 </tr>
@@ -61,4 +67,12 @@
 </div>
 
 </body>
+
 </html>
+<script>
+    function deleteEmployee(id) {
+        if (confirm("Are you sure you want to delete?")) {
+            document.getElementById('employee-edit-action-'+id).submit();
+        }
+    }
+    </script>

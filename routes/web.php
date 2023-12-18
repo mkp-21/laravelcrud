@@ -21,3 +21,6 @@ route::get('/employee' ,[EmployeeController::class,'index'])->name('employee.ind
 route::get('/employee/create' ,[EmployeeController::class,'create'])->name('employee.create');
 route::post('/employee' ,[EmployeeController::class,'store'])->name('employee.store');
 Route::get('/employee/{employee}/edit',[EmployeeController::class,'edit'])->name('employee.edit');
+Route::put('/employee/{employee}',[EmployeeController::class,'update'])->name('employee.update');
+
+Route::delete('/employee/{employee}',[EmployeeController::class,'destroy'])->name('employee.destroy');
